@@ -7,15 +7,16 @@
             <div class="card-body p-5 text-center">
               <div class="mb-md-5 mt-md-4 pb-5">
                 <h1 class="mb-2">
-                  <i>OhMy</i><span class="fw-bold" id="texto"
+                  <i>OhMy</i
+                  ><span class="fw-bold" id="texto"
                     ><strong><i>Tasks!</i></strong></span
                   >
                 </h1>
                 <h4 class="text-white-50 mb-5">
-                  Always now what's next
+                  <quote>For people who forget to use to-do apps</quote>
                   <img src="../assets/check.svg" alt="check" />
-                </h4><aside>
-                  </aside>
+                </h4>
+                <aside></aside>
                 <div class="form-outline form-white mb-4">
                   <input
                     type="email"
@@ -31,22 +32,24 @@
                     type="password"
                     id="typePasswordX"
                     class="form-control form-control-lg"
-                    placeholder="Password"
+                    placeholder="********"
                   />
+                  <!-- <button onclick="switchVisibility()">show / hide</button> -->
+
                   <label class="form-label" for="typePasswordX">Password</label>
                 </div>
 
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">
-                  Sign In
-                </button>
-              </div>
+                <div>
+                  <button
+                    class="btn btn-outline-light btn-lg px-5"
+                    type="submit"
+                  >
+                    Sign In
+                  </button>
+                </div>
 
-              <div>
-                <p class="mb-0">
-                  Don't have an account?
-                  <a href="/auth/sign-up" class="text-white-50 fw-bold">Sign Up</a>
-                </p>
               </div>
+              <PersonalRouter :route="route" :buttonText="buttonText"/>
             </div>
           </div>
         </div>
@@ -63,10 +66,9 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 
-
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Test the Sign Up Route";
+const buttonText = "Don't have an account? Sing up";
 
 // Input Fields
 const email = ref("");
@@ -89,7 +91,7 @@ const signIn = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
     // redirects user to the homeView
-    redirect.push({ path:"https://zfvtciiqapmejbhsdull.supabase.co" });
+    redirect.push({ path: "/." });
   } catch (error) {
     // displays error message
     errorMsg.value = `Error: ${error.message}`;
@@ -101,9 +103,11 @@ const signIn = async () => {
 };
 </script>
 
-<style scoped>
-
-
+<style>
+p {
+  padding-top: 70px;
+  padding-bottom: 0;
+}
 #texto {
   background: linear-gradient(#1f8867, rgb(10, 255, 198));
   -webkit-background-clip: text;
@@ -113,6 +117,7 @@ const signIn = async () => {
 h1 {
   padding-bottom: 30px;
 }
+
 .gradient-custom {
   /* fallback for old browsers */
   background: #13ac7e;
@@ -131,12 +136,12 @@ span {
   flex-direction: column;
   margin: 1rem 0;
 }
-.input {
-  color: black;
+input {
+  color: white;
+  text-decoration: none;
   margin-bottom: 1rem;
 }
 .button {
-  background-color: #4caf50; /* Green */
   border: none;
   color: white;
   padding: 10px 10px;
