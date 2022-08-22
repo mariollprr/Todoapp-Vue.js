@@ -1,71 +1,54 @@
 <template>
-  <section class="vh-50 gradient-custom">
-    <div class="container py-5 h-50">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card bg-dark text-white" style="border-radius: 1rem">
-            <div class="card-body p-5 text-center">
-              <div class="mb-md-5 mt-md-4 pb-5">
-                <h3>Welcome to</h3>
-                <h1 class="mb-2">
-                  OhMy<span class="fw-bold" id="texto"
-                    ><strong><i>Tasks!</i></strong></span
-                  >
-                </h1>
-                <h5 class="text-white-50 mb-5">
-                  First task: Create your account
-                  <img src="../assets/check.svg" alt="check" />
-                </h5>
-                <aside></aside>
-                <div class="form-outline form-white mb-4">
-                  <input
-                    type="email"
-                    id="typeEmailX"
-                    class="form-control form-control-lg"
-                    placeholder="Email"
-                    :value="email"
-                  />
-                  <label class="form-label" for="typeEmailX">Email</label>
-                </div>
-
-                <div class="form-outline form-white mb-4">
-                  <input
-                    type="password"
-                    id="typePasswordX"
-                    class="form-control form-control-lg"
-                    placeholder="********"
-                    :value="password"
-                  />
-                  <label class="form-label" for="typePasswordX">Password</label>
-                </div>
-
-                <div class="form-outline form-white mb-4">
-                  <input
-                    type="password"
-                    id="typeConfirmPasswordX"
-                    class="form-control form-control-lg"
-                    placeholder="********"
-                    :value="password"
-                  />
-                  <label class="form-label" for="typeConfirmPasswordX"
-                    >Confirm Password</label
-                  >
-                </div>
-
-                <div>
-                  <button
-                    class="btn btn-outline-light btn-lg px-5"
-                    type="submit"
-                  >
-                    Sign Up
-                  </button>
-                </div>
-
-              </div>
-              <PersonalRouter :route="route" :buttonText="buttonText"/>
+  <section class="min-height">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <div class="logo text-center">
+              <img src="../assets/1.png" alt="logo ohmytasks!" class="logoimg" width="200" height="150" />
+              <h5 class=" mb-5">Sign up for your account</h5>
             </div>
+            <form>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form3Example3" class="form-control" placeholder="example@email.com"
+                  v-model="this.email" />
+                <label class="form-label" for="form3Example3">Email address</label>
+              </div>
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" placeholder="*********"
+                  v-model="this.password" />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+              <!-- Confirm password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" placeholder="*********"
+                  v-model="this.confirmPassword" />
+                <label class="form-label" for="form3Example4">Confirm password</label>
+              </div>
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign Up
+              </button>
+              <!-- Register buttons -->
+              <div class="text-center">
+                <div>
+                  <p>Have an account?
+                  <PersonalRouter :route="route" :buttonText="buttonText" /></p>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
+      </div>
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img
+          src="../assets/safar-safarov-koOdUvfGr4c-unsplash (1).jpg"
+          class="w-100 rounded-4 shadow-4" alt="Welcome image" height="710"/>
       </div>
     </div>
   </section>
@@ -81,12 +64,11 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/login";
-const buttonText = "Don’t have an account? Sing Up";
-
+const buttonText = "Sign In";
 // Input Fields
 const email = ref("");
 const password = ref("");
-
+const confirmPassword = ref("");
 // Error Message
 const errorMsg = ref("");
 // Show hide password variable
@@ -99,7 +81,7 @@ const hideconfirmPassword = ref(true);
 // Router to push user once SignedUp to Log In
 const redirect = useRouter();
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
-const signIn = async () => {
+const signUp = async () => {
   try {
     await useUserStore().signIn(email.value, password.value);
     redirect.push({ path: "/." });
