@@ -1,5 +1,5 @@
 <template>
-  <section class="min-height">
+  <section>
     <div class="row g-0 align-items-center">
       <div class="col-lg-6 mb-5 mb-lg-0">
         <div class="card cascading-right" style="
@@ -11,7 +11,7 @@
               <img src="../assets/1.png" alt="logo ohmytasks!" class="logoimg" width="200" height="150" />
               <h5 class=" mb-5">Sign up for your account</h5>
             </div>
-            <form>
+            <form @submit.prevent="signUp">
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control" placeholder="example@email.com"
@@ -26,7 +26,7 @@
               </div>
               <!-- Confirm password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" placeholder="*********"
+                <input type="password" id="form3Example5" class="form-control" placeholder="*********"
                   v-model="this.confirmPassword" />
                 <label class="form-label" for="form3Example4">Confirm password</label>
               </div>
@@ -82,15 +82,24 @@ const hideconfirmPassword = ref(true);
 const redirect = useRouter();
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const signUp = async () => {
-  try {
-    await useUserStore().signIn(email.value, password.value);
-    redirect.push({ path: "/." });
-  } catch (error) {
-    errorMsg.value = `Error: ${error.message}`;
-    setTimeout(() => {
-      errorMsg.value = null;
-    }, 5000);
+  if (password.value === confirmPassword.value) {
+    try {
+      // calls the user store and send the users info to backend to logIn
+      await useUserStore().signUp(email.value, password.value);
+      // redirects user to the homeView
+      redirect.push({ path: "/auth/login" });
+    }
+    catch (error) {
+      // displays error message
+      errorMsg.value = error.message;
+      // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
+    return;
   }
+  errorMsg.value = "Invalid password";
 };
 </script>
 

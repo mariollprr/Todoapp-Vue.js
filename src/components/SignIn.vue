@@ -84,15 +84,15 @@ const signIn = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
     // redirects user to the homeView
-    redirect.push({ path: "/." });
+    redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
-    errorMsg.value = `Error: ${error.message}`;
+       errorMsg.value = error.message;
     // hides error message
     setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
-  }
+  };
 };
 </script>
 
