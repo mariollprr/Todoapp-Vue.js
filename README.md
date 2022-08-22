@@ -11,3 +11,7 @@ Start final project.
 ## Friday on August 19
 
 Create sign in and sign up components.
+
+## Monday on August 22
+
+Add navbar and sign out
