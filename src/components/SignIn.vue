@@ -45,7 +45,7 @@
       <div class="col-lg-6 mb-5 mb-lg-0">
         <img
           src="../assets/safar-safarov-koOdUvfGr4c-unsplash (1).jpg"
-          class="w-100 rounded-4 shadow-4" alt="Welcome image" height="710"/>
+          class="w-100 rounded-4 shadow-4" alt="Welcome image" height="746"/>
       </div>
     </div>
   </section>
@@ -97,6 +97,7 @@ const signIn = async () => {
 </script>
 
 <style>
+
 a {
   text-decoration: none;
   font-weight: 600;

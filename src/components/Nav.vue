@@ -22,10 +22,10 @@
       </ul>
      <div>
       <!-- Welcome message -->
-      <p class="me-auto"> 👋Welcome back, <span>{{ name[0] }}</span>!</p>
+      <p id="welcomemsg" class="me-auto"> 👋 Welcome back, <span>{{ name[0] }}</span>!</p>
       </div>
       <!-- Sign out button -->
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-right">
         <button @click="signOut" type="button" class="btn btn-primary me-3">
           Sign out
         </button>
@@ -38,11 +38,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { supabase } from "../supabase";
 import { useUserStore } from "../stores/user";
-import { storeToRefs } from "pinia";
 //constant to save a variable that will hold the use router method
 const route = "/";
 // constant to save a variable that will get the user from store with a computed function imported from vue
@@ -70,8 +68,8 @@ const signOut = async () => {
 };
 </script>
 
-<style scope>
-p {
+<style>
+#welcomemsg {
   margin-top: 20px;
   color:white;
   padding-right: 30px
@@ -81,6 +79,5 @@ img {
 }
 span {
   font-weight: bold;
-  padding-left: 5px;
 }
 </style>
