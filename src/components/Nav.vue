@@ -1,40 +1,36 @@
 <template>
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-  <!-- Container wrapper -->
-  <div class="container">
-    <!-- Navbar brand -->
-    <router-link to="/">
-      <img
-        src="../assets/2.png"
-        height="65"
-        alt="OHMT lOGO"
-        loading="lazy"
-        style="margin-top: -1px;;"
-      />
-    </router-link>
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarButtonsExample">
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
-        </li>
-      </ul>
-     <div>
-      <!-- Welcome message -->
-      <p id="welcomemsg" class="me-auto"> 👋 Welcome back, <span>{{ name[0] }}</span>!</p>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <router-link to="/">
+        <img src="../assets/2.png" height="65" alt="OHMT logo" loading="lazy" style="margin-top: -1px;;" />
+      </router-link>
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+        </ul>
+        <div>
+          <!-- Welcome message -->
+          <p id="welcomemsg" class="me-auto"> <img
+              src="../assets/kisspng-hand-waving-wave-emoji-clip-art-hand-wave-5b4ff8bd421f79.6030101615319676772709.png"
+              width="22" height="22" alt="" /> Welcome back, <span>{{ name[0] }}</span>!</p>
+        </div>
+        <!-- Sign out button -->
+        <div class="d-flex align-items-right">
+          <button @click="signOut" type="button" class="btn btn-primary me-3">
+            Sign Out
+          </button>
+        </div>
       </div>
-      <!-- Sign out button -->
-      <div class="d-flex align-items-right">
-        <button @click="signOut" type="button" class="btn btn-primary me-3">
-          Sign out
-        </button>
-      </div>
+      <!-- Collapsible wrapper -->
     </div>
-    <!-- Collapsible wrapper -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
+    <!-- Container wrapper -->
+  </nav>
 </template>
 
 <script setup>
@@ -52,14 +48,14 @@ const name = email.split("@");
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
 const signOut = async () => {
- try {
+  try {
     // calls the user store and signs out
     await useUserStore().signOut();
     // redirects user to the auth login
     redirect.push({ path: "/auth/login" });
   } catch (error) {
     // displays error message
-       errorMsg.value = error.message;
+    errorMsg.value = error.message;
     // hides error message
     setTimeout(() => {
       errorMsg.value = null;
@@ -71,12 +67,14 @@ const signOut = async () => {
 <style>
 #welcomemsg {
   margin-top: 20px;
-  color:white;
+  color: white;
   padding-right: 30px
 }
+
 img {
   margin-top: -1px;
 }
+
 span {
   font-weight: bold;
 }
