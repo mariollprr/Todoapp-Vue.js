@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark text-center text-white">
+  <div class="background text-center text-white">
     <!-- Copyright -->
     <div class="text-center p-3">
       © 2022 Copyright:
@@ -13,4 +13,7 @@
 <script setup></script>
 
 <style>
+.background {
+  background-color: #2f2e41;
+}
 </style>

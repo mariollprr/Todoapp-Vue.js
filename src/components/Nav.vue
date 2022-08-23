@@ -1,10 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar">
     <!-- Container wrapper -->
     <div class="container">
       <!-- Navbar brand -->
       <router-link to="/">
-        <img src="../assets/2.png" height="65" alt="OHMT logo" loading="lazy" style="margin-top: -1px;;" />
+        <img src="../assets/nav-logo.png" height="65" alt="OHMT logo" loading="lazy" style="margin-top: -1px;;" />
       </router-link>
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarButtonsExample">
@@ -77,5 +77,9 @@ img {
 
 span {
   font-weight: bold;
+}
+
+.navbar-expand-lg {
+  background-color: #2f2e41 ;
 }
 </style>

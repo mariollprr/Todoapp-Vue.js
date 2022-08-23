@@ -1,33 +1,33 @@
 <template>
   <div class="card text-center">
-    <div class="card-header">
-
-    </div>
-    <div class="card-body">
-      <h1 class="card-title">Add a new task</h1>
-      <h4>What's on your todo list?</h4>
-      <p class="card-text">Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
+    <div class="container">
+      <div class="container-card card-body">
+        <h1 class="card-title">Add a new Task</h1>
+        <h4>What's on your todo list?</h4>
+        <p class="card-text">Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
+      </div>
+      <div class="container-svg">
+        <img src="../assets/todo-girl.svg" alt="Girl task">
+      </div>
     </div>
     <div class="card-footer text-muted">
-      <div class="alert alert-warning" role="alert" v-if="showErrorMessage" >
+      <div class="alert alert-warning" role="alert" v-if="showErrorMessage">
         <p>{{ errorMessage }}</p>
       </div>
     </div>
   </div>
-  <div class="add-task-section">
 
     <div class="add-task-form">
       <div class="form-outline mb-4">
         <input type="text" id="form3Example1" class="form-control" placeholder="Task title" v-model="title" />
       </div>
       <div class="form-outline mb-4">
-        <input type="text" id="form3Example2" class="form-control" placeholder="Task description" v-model="description" />
+        <input type="text" id="form3Example2" class="form-control" placeholder="Task description"
+          v-model="description" />
       </div>
-
-      <button @click.prevent="errorFunction" class="btn btn-primary btn-block mb-4">Add</button>
+      <button @click.prevent="errorFunction" class="btn btn-primary btn-block text-white mb-4">Add Task</button>
     </div>
 
-  </div>
 </template>
 
 <script setup>
@@ -79,10 +79,28 @@ const errorFunction = () => {
 
 
 <style scoped>
+* {
+  color: #1a1929;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container-svg {
+  padding-right: 80px;
+}
 .form-control {
   width: 60%;
 }
+
 .btn {
-  padding-right: 57%;
+  padding-right: 55%;
+}
+
+.add-task-form {
+  justify-content: center; 
+  align-items: center; 
+  position: relative;
 }
 </style>
