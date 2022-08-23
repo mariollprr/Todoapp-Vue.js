@@ -4,17 +4,21 @@
 
 Build a To-do app with Vue.js that allows users to create an account, record tasks, edit them and mark them as complete. The app will be linked to a database, where all the user and task data will be stored.
 
-### Thrurday on August 18 
+### Thur Aug 18 2022
 
 Start final project.
 
-### Friday on August 19
+### Fri Aug 19 2022
 
 Create sign in and sign up components.
 
-### Monday on August 22
+### Mon Aug 22 2022
 
 Add navbar and implement sign out function and footer component.
+
+### Tue Aug 23 2022
+
+Create NewTask component.
 
 ## Project Setup
 
