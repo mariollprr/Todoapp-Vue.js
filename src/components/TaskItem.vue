@@ -1,16 +1,100 @@
 <template>
-  <div>Task Item Component</div>
+  <div>
+    <div class="card">
+      <div class="card-body">
+          <h3 class="card-title">{{ item.title }}</h3>
+          <p class="card-text">{{ item.description }}</p>
+        <button type="button" class="btn btn-success" @click="completedTask"><i
+            class="fa-solid fa-circle-check"></i></button>
+        <button type="button" class="btn btn-warning" @click="showEdit"><i
+            class="fa-solid fa-pen-to-square"></i></button>
+        <button type="button" class="btn btn-danger" @click="deleteTask"><i class="fa-solid fa-trash"></i></button>
+      </div>
+    </div>
+    <div v-if="showEditOptions">
+      <form @submit.prevent="editTask">
+        <div>
+          <input type="text" placeholder="Edit Title" v-model="taskTitle" />
+        </div>
+        <div>
+          <input type="text" placeholder="Edit Description" v-model="taskDescription" />
+        </div>
+        <input type="submit" value="Edit" />
+      </form>
+    </div>
+    <div class="container-svg">
+      <img src="../assets/undraw_reminder_re_fe15.svg" alt="">
+    </div>
+  </div>
+  <!-- 
+  <p v-if="!isCompleted">To Do</p>
+  <p v-else>Complete</p> -->
 </template>
 
 <script setup>
-// const emit = defineEmits([
-//   ENTER-EMITS-HERE
-// ])
+import { ref, defineProps } from "vue";
+import { useTaskStore } from "../stores/task"
 
-// const props = defineProps(["ENTER-PROP-HERE"]);
+const taskTitle = ref("");
+const taskDescription = ref("");
+const showEditOptions = ref(false);
+const isCompleted = ref(false);
+const emit = defineEmits([
+  "childEditStatus",
+  "childToggleStatus",
+  "childDeleteStatus",
+]);
+
+const props = defineProps(["item"]);
+const showEdit = () => {
+  showEditOptions.value = !showEditOptions.value;
+};
+
+const editTask = () => {
+  const newTask = {
+    title: taskTitle.value,
+    description: taskDescription.value,
+    id: props.item.id,
+  };
+  emit("childEditStatus", newTask);
+  (taskTitle.value = ""), (taskDescription.value = "");
+};
+
+const completedTask = (id) => {
+  isCompleted.value = !isCompleted.value;
+  emit("childToggleStatus", props.item.id);
+};
+
+const deleteTask = () => {
+  emit("childDeleteStatus", props.item.id);
+};
+
 </script>
 
-<style></style>
+<style scoped>
+button {
+  height: 40px;
+  width: 40px;
+  padding-right: 20px;
+  margin-right: 20px;
+}
+
+.options-icons {
+  display: block;
+  padding: 15px;
+}
+
+i {
+  color: white;
+}
+.card {
+  display: flex;
+}
+.card-body {
+  width: 400px;
+}
+</style>
+
 
 <!-- 
 **Hints**

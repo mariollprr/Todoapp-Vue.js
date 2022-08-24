@@ -6,7 +6,7 @@
             background: hsla(0, 0%, 100%, 0.55);
             backdrop-filter: blur(30px);
             ">
-            <!-- Logo -->
+          <!-- Logo -->
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
               <img src="../assets/1.png" alt="logo ohmytasks!" width="200" height="150" />
@@ -16,13 +16,13 @@
             <form @submit.prevent="signIn">
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" placeholder="example@email.com"
+                <input type="email" id="form3Example3" class="form-control shadow-5" placeholder="example@email.com"
                   v-model="this.email" required />
                 <label class="form-label" for="form3Example3">Email address</label>
               </div>
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" placeholder="*********"
+                <input type="password" id="form3Example4" class="form-control shadow-5" placeholder="*********"
                   v-model="this.password" />
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
@@ -43,9 +43,8 @@
         </div>
       </div>
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img
-          src="../assets/safar-safarov-koOdUvfGr4c-unsplash (1).jpg"
-          class="w-100 rounded-4 shadow-4" alt="Welcome image" height="746"/>
+        <img src="../assets/safar-safarov-koOdUvfGr4c-unsplash (1).jpg" class="w-100 rounded-4 shadow-4"
+          alt="Welcome image" height="746" />
       </div>
     </div>
   </section>
@@ -87,7 +86,7 @@ const signIn = async () => {
     redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
-       errorMsg.value = error.message;
+    errorMsg.value = error.message;
     // hides error message
     setTimeout(() => {
       errorMsg.value = null;
@@ -97,7 +96,6 @@ const signIn = async () => {
 </script>
 
 <style>
-
 a {
   text-decoration: none;
   font-weight: 600;

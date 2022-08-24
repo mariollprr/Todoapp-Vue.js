@@ -80,6 +80,6 @@ span {
 }
 
 .navbar-expand-lg {
-  background-color: #2f2e41 ;
+  background-color: #2f2e41;
 }
 </style>
