@@ -20,6 +20,14 @@ Add navbar and implement sign out function and footer component.
 
 Create NewTask component.
 
+### Wed Aug 24 2022
+
+Implement the logic for edit, toggle and delete a task in TaskItem component.
+
+### Thur Aug 25 2022
+
+Unify styles and add new features, like line-through in task when completed.
+
 ## Project Setup
 
 ```sh
