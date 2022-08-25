@@ -48,6 +48,7 @@ const showEdit = () => {
   showEditOptions.value = !showEditOptions.value;
 };
 
+
 const editTask = () => {
   const newTask = {
     title: taskTitle.value,

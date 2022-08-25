@@ -12,29 +12,36 @@
               <h5 class=" mb-5">SIGN UP FOR YOUR ACCOUNT</h5>
             </div>
             <form @submit.prevent="signUp">
-              <!-- Email input -->
+              <label class="form-label" for="form3Example3">Email</label>
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control" placeholder="example@email.com"
-                  v-model="email" required/>
-                <label class="form-label" for="form3Example3">Email</label>
+                  v-model="email" required />
               </div>
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" placeholder="*********"
-                  v-model="password" required/>
-                <label class="form-label" for="form3Example4">Password</label>
+              <label class="form-label" for="form3Example4">Password</label>
+              <div class="input-group mb-3">
+                <input required v-model="password" class="form-control" :type="passwordFieldType"
+                  placeholder="**********" id="exampleInputPassword1" />
+                <div class="btn btn-light">
+                  <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+                  <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+                </div>
+                <div>
+                </div>
               </div>
-              <!-- Confirm password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="form3Example5" class="form-control" placeholder="*********"
-                  v-model="confirmPassword" required />
-                <label class="form-label" for="form3Example4">Confirm password</label>
+              <label class="form-label" for="exampleInputPassword1">Confirm password</label>
+              <div class="input-group mb-3">
+                <input required v-model="confirmPassword" class="form-control" :type="passwordFieldType"
+                  placeholder="**********" id="exampleInputPassword1" />
+                <div class="btn btn-light">
+                  <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+                  <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+                </div>
+                <div>
+                </div>
               </div>
-              <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">
                 Sign Up
               </button>
-              <!-- Register buttons -->
               <div class="text-center">
                 <div>
                   <p>Have an account?
@@ -47,8 +54,7 @@
         </div>
       </div>
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="../assets/undraw_trip.svg" class="w-100 rounded-4 shadow-4"
-          alt="Welcome image" height="746" />
+        <img src="../assets/undraw_trip.svg" class="w-100 rounded-4 shadow-4" alt="Welcome image" height="746" />
       </div>
     </div>
   </section>

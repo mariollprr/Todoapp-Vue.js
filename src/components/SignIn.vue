@@ -6,20 +6,18 @@
             background: hsla(0, 0%, 100%, 0.55);
             backdrop-filter: blur(30px);
             ">
-          <!-- Logo -->
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
               <img src="../assets/sign-logo.png" alt="Logo OhMyTasks!" width="200" height="200" />
               <h5 class=" mb-5"><i>For people who forget to use to-do apps</i></h5>
             </div>
-            <!-- Fornm -->
             <form @submit.prevent="signIn">
-              <!-- Email input -->
+            <label class="form-label" for="form3Example3">Email</label>
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control shadow-5" placeholder="example@email.com"
                   v-model="email" required />
-                <label class="form-label" for="form3Example3">Email</label>
               </div>
+              <label class="form-label" for="form3Example4">Password</label>
               <div class="input-group mb-3">
                 <input required v-model="password" class="form-control" :type="passwordFieldType"
                   placeholder="**********" id="exampleInputPassword1" />
@@ -28,16 +26,12 @@
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
                 </div>
                 <div>
-                  
                 </div>
               </div>
               <div class="sign-in-button">
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">
-                  Sign In
-                </button>
+                <p v-if="errorMsg" class="alert alert-danger" role="alert">{{ errorMsg }}</p>
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
               </div>
-              <!-- Register buttons -->
               <div class="text-center">
                 <div>
                   <p>Don't have an account?
@@ -54,7 +48,7 @@
       </div>
     </div>
   </section>
- <Footer/> 
+  <Footer />
 </template>
 
 <script setup>
@@ -76,7 +70,6 @@ const password = ref("");
 
 // Error Message
 const errorMsg = ref("");
-
 //Show hide password variables
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
@@ -94,7 +87,7 @@ const signIn = async () => {
     redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
-    errorMsg.value = error.message;
+    errorMsg.value = "The email or password you entered is incorrect, please try again.";
     // hides error message
     setTimeout(() => {
       errorMsg.value = null;
@@ -122,6 +115,11 @@ h5 {
 
 .form-control {
   box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+  margin-bottom: 20px;;
+}
+
+.form-label {
+  margin-bottom: 0;;
 }
 
 

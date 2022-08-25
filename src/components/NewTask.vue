@@ -91,7 +91,8 @@ img {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
+  text-transform: uppercase;
 }
 
 h1,
@@ -107,6 +108,7 @@ p {
 .col-4 {
   width: auto;
   align-items: center;
+  padding: 0;
 }
 
 .text-center {
@@ -115,7 +117,7 @@ p {
 }
 
 #formInputs {
-  width: 600px;
+  width: 850px;
 }
 
 #form3Example1 {
