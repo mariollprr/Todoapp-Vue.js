@@ -9,7 +9,7 @@
           <!-- Logo -->
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
-              <img src="../assets/1.png" alt="logo ohmytasks!" width="200" height="150" />
+              <img src="../assets/signInUp.png" alt="logo ohmytasks!" width="200" height="150" />
               <h6 class=" mb-5"><i>For people who forget to use to-do apps</i></h6>
             </div>
             <!-- Fornm -->
@@ -18,7 +18,7 @@
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control shadow-5" placeholder="example@email.com"
                   v-model="this.email" required />
-                <label class="form-label" for="form3Example3">Email address</label>
+                <label class="form-label" for="form3Example3">Email</label>
               </div>
               <!-- Password input -->
               <div class="form-outline mb-4">
@@ -60,7 +60,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const routeup = "/auth/sign-up";
-const buttonTextup = "Sign up";
+const buttonTextup = "Sign Up";
 
 // Input Fields
 const email = ref("");
@@ -99,6 +99,10 @@ const signIn = async () => {
 a {
   text-decoration: none;
   font-weight: 600;
+}
+
+p {
+  color: #2f2e41
 }
 
 .cascading-right {

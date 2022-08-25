@@ -8,7 +8,7 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <div class="logo text-center">
-              <img src="../assets/1.png" alt="logo ohmytasks!" class="logoimg" width="200" height="150" />
+              <img src="../assets/signInUp.png" alt="logo ohmytasks!" class="logoimg" width="200" height="150" />
               <h5 class=" mb-5">Sign up for your account</h5>
             </div>
             <form @submit.prevent="signUp">
@@ -16,7 +16,7 @@
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control" placeholder="example@email.com"
                   v-model="this.email" />
-                <label class="form-label" for="form3Example3">Email address</label>
+                <label class="form-label" for="form3Example3">Email</label>
               </div>
               <!-- Password input -->
               <div class="form-outline mb-4">
