@@ -9,7 +9,7 @@
           <div class="card-body p-5 shadow-5 text-center">
             <div class="logo text-center">
               <img src="../assets/signInUp.png" alt="logo ohmytasks!" class="logoimg" width="200" height="200" />
-              <h5 class=" mb-5">Sign up for your account</h5>
+              <h5 class=" mb-5">SIGN UP FOR YOUR ACCOUNT</h5>
             </div>
             <form @submit.prevent="signUp">
               <!-- Email input -->

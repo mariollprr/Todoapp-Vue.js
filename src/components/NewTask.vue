@@ -91,6 +91,12 @@ img {
   margin-top: 0;
 }
 
+h1 {
+  font-size: 60px;
+}
+h1, h4, p {
+  text-shadow: rgb(200, 200, 200) 0.1em 0.1em 0.1em
+  }
 .container {
   margin-top: 0;
 }
@@ -102,7 +108,7 @@ img {
 
 .text-center {
   margin-top: 20px;
-  font-size: larger;
+  font-size: large;
 }
 #formInputs {
   width: 600px;

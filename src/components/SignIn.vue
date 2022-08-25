@@ -10,7 +10,7 @@
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
               <img src="../assets/signInUp.png" alt="logo ohmytasks!" width="200" height="200" />
-              <h6 class=" mb-5"><i>For people who forget to use to-do apps</i></h6>
+              <h5 class=" mb-5"><i>For people who forget to use to-do apps</i></h5>
             </div>
             <!-- Fornm -->
             <form @submit.prevent="signIn">
@@ -101,8 +101,9 @@ a {
   font-weight: 600;
 }
 
-p {
-  color: #2f2e41
+h5 {
+  color: #2f2e41;
+  margin-top: -20PX;
 }
 
 .cascading-right {
