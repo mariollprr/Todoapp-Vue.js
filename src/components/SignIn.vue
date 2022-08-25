@@ -17,13 +17,13 @@
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control shadow-5" placeholder="example@email.com"
-                  v-model="this.email" required />
+                  v-model="email" required />
                 <label class="form-label" for="form3Example3">Email</label>
               </div>
               <!-- Password input -->
               <div class="form-outline mb-4">
                 <input type="password" id="form3Example4" class="form-control shadow-5" placeholder="*********"
-                  v-model="this.password" />
+                  v-model="password" />
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
               <!-- Submit button -->
