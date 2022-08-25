@@ -1,9 +1,11 @@
 <template>
-  <div class="text-center">
-    <h1>Add a new Task</h1>
-    <h4>-Get that mental clarity you've been longing for.</h4>
-    <p>Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
-  </div>
+
+      <div class="text-center">
+        <h1>Add a new Task</h1>
+        <h4>Get that mental clarity you've been longing for.</h4>
+        <p>Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
+      </div>
+
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-4">
@@ -15,7 +17,7 @@
           <textarea type="text" id="form3Example2" class="form-control" placeholder="Task description"
             v-model="description" />
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="d-grid gap-2">
           <button @click.prevent="errorFunction" class="btn btn-primary btn-block text-white mb-4">Add Task</button>
           <p v-if="showErrorMessage" class="alert alert-warning" role="alert">{{ errorMessage }}</p>
         </div>

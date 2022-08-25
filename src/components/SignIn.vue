@@ -48,11 +48,9 @@
       </div>
     </div>
   </section>
-  <Footer />
 </template>
 
 <script setup>
-import Footer from "./Footer.vue";
 import { ref, computed } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
 import { supabase } from "../supabase";
@@ -97,6 +95,9 @@ const signIn = async () => {
 </script>
 
 <style>
+body {
+  background: center center cover no-repeat fixed;
+}
 a {
   text-decoration: none;
   font-weight: 600;
@@ -128,9 +129,17 @@ h5 {
   margin-right: -50px;
 }
 
-@media (max-width: 991.98px) {
+
+@media (max-width: 700.98px) {
   .cascading-right {
     margin-right: 0;
   }
 }
+@media (max-width: 992px) {
+.w-100 {
+display:none;
+}
+}
+
+
 </style>
