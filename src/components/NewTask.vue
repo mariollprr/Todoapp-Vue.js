@@ -1,30 +1,31 @@
 <template>
-  <div class="card text-center">
-    <div class="container">
-      <div class="container-card card-body">
-        <h1 class="card-title">Add a new Task</h1>
-        <h4>What's on your todo list?</h4>
-        <p class="card-text">Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
+  <div>
+    <div>
+      <div class="text-center">
+        <h1>Add a new Task</h1>
+        <h4>-Get that mental clarity you've been longing for.</h4>
+        <p>Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
       </div>
-      <div class="container-svg">
-        <img src="../assets/todo-girl.svg" alt="Girl task">
-      </div>
-    </div>
-   
-      <div class="alert alert-danger" role="alert" v-if="showErrorMessage">
-        <p>{{ errorMessage }}</p>
-      </div>
-    
-  </div>
 
-  <div class="container">
-    <div class="form-outline container-card-center mb-4 shadow-3">
-      <input type="text" id="form3Example1" class="form-control shadow-3" placeholder="Task title" v-model="title" />
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-4">
+            <img src="../assets/smartphone.svg" alt="todo app">
+          </div>
+          <div class="col-4" id="formInputs">
+            <input type="text" id="form3Example1" class="form-control" placeholder="Task title" v-model="title" />
+            <div>
+              <input type="text" id="form3Example2" class="form-control" placeholder="Task description" v-model="description" />
+            </div>
+            <button @click="getInfo" class="btn btn-primary btn-block text-white mb-4">Add Task</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-outline mb-4">
-      <input type="text" id="form3Example2" class="form-control shadow-3" placeholder="Task description" v-model="description" />
+
+    <div class="alert alert-danger" role="alert" v-if="showErrorMessage">
+      <p>{{ errorMessage }}</p>
     </div>
-    <button @click="getInfo" class="btn btn-primary btn-block text-white mb-4">Add Task</button>
   </div>
 
 </template>
@@ -66,7 +67,7 @@ const getInfo = async () => {
     title.value = "";
     description.value = "";
   } else {
-    errorMsg.value = "Error: Title is required";
+    errorMessage.value = "The title or description of your task is empty";
     setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
@@ -81,27 +82,37 @@ const getInfo = async () => {
   color: #1a1929;
 }
 
+li {
+  list-style: none;
+}
+
+img {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 .container {
-  display: flex;
+  margin-top: 0;
+}
+
+.col-4 {
+  width: auto;
   align-items: center;
 }
 
-.container-svg {
-  padding-right: 80px;
+.text-center {
+  margin-top: 20px;
+  font-size: larger;
+}
+#formInputs {
+  width: 600px;
 }
 
-.form-control {
-  width: 60%;
+#form3Example1 {
+  margin-bottom: 5px;
 }
 
-.form-outline {
-  display: inline-block;
-}
-
-
-.add-task-form {
-  justify-content: center;
-  align-items: center;
-  position: relative;
+#form3Example2 {
+  margin-bottom: 5px;
 }
 </style>

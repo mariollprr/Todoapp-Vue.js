@@ -13,8 +13,9 @@
 
 <script setup></script>
 
-<style>
+<style scoped>
 .background {
   background-color: #2f2e41;
 }
+
 </style>

@@ -2,28 +2,27 @@
   <div>
     <div class="card">
       <div class="card-body">
-          <h3 class="card-title">{{ item.title }}</h3>
-          <p class="card-text">{{ item.description }}</p>
-        <button type="button" class="btn btn-success" @click="completedTask"><i
-            class="fa-solid fa-circle-check"></i></button>
-        <button type="button" class="btn btn-warning" @click="showEdit"><i
-            class="fa-solid fa-pen-to-square"></i></button>
-        <button type="button" class="btn btn-danger" @click="deleteTask"><i class="fa-solid fa-trash"></i></button>
+        <h3 class="card-title">{{ item.title }}</h3>
+        <p class="card-text">{{ item.description }}</p>
+        <div class="buttons-options">
+          <button type="button" class="btn btn-success" @click="completedTask"><i
+              class="fa-solid fa-circle-check"></i></button>
+          <button type="button" class="btn btn-warning" @click="showEdit"><i
+              class="fa-solid fa-pen-to-square"></i></button>
+          <button type="button" class="btn btn-danger" @click="deleteTask"><i class="fa-solid fa-trash"></i></button>
+        </div>
       </div>
     </div>
     <div v-if="showEditOptions">
       <form @submit.prevent="editTask">
-        <div>
-          <input type="text" placeholder="Edit Title" v-model="taskTitle" />
+        <div class="edit-inputs">
+          <input type="text" placeholder="Edit title" class="form-control" v-model="taskTitle" />
         </div>
         <div>
-          <input type="text" placeholder="Edit Description" v-model="taskDescription" />
+          <input type="text" placeholder="Edit description" class="form-control" v-model="taskDescription" />
         </div>
-        <input type="submit" value="Edit" />
+        <input type="submit" class="btn btn-primary btn-block text-white mb-4" value="Edit" />
       </form>
-    </div>
-    <div class="container-svg">
-      <img src="../assets/undraw_reminder_re_fe15.svg" alt="">
     </div>
   </div>
   <!-- 
@@ -79,20 +78,37 @@ button {
   margin-right: 20px;
 }
 
-.options-icons {
-  display: block;
-  padding: 15px;
+.buttons-options {
+  padding-top: 30px
 }
 
 i {
   color: white;
 }
+
+.form-control {
+  width: 600px;
+  margin-bottom: 10px;
+}
+
+.v-if {
+  text-decoration: line-through;
+}
+
 .card {
   display: flex;
+  width: 500px;
+  height: max-content;
+  background-color: #f4fbff;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border-left: solid cornflowerblue 5px;
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+  box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
 }
-.card-body {
-  width: 400px;
-}
+
 </style>
 
 
