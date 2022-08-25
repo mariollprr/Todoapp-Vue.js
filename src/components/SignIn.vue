@@ -9,7 +9,7 @@
           <!-- Logo -->
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
-              <img src="../assets/signInUp.png" alt="Logo OhMyTasks!" width="200" height="200" />
+              <img src="../assets/sign-logo.png" alt="Logo OhMyTasks!" width="200" height="200" />
               <h5 class=" mb-5"><i>For people who forget to use to-do apps</i></h5>
             </div>
             <!-- Fornm -->
@@ -20,13 +20,15 @@
                   v-model="email" required />
                 <label class="form-label" for="form3Example3">Email</label>
               </div>
-              <div>
+              <div class="input-group mb-3">
                 <input required v-model="password" class="form-control" :type="passwordFieldType"
-                  placeholder="Enter your password" id="exampleInputPassword1" />
-                <label class="form-label" for="form3Example4">Password</label>
+                  placeholder="**********" id="exampleInputPassword1" />
                 <div class="btn btn-light">
                   <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+                </div>
+                <div>
+                  
                 </div>
               </div>
               <div class="sign-in-button">
@@ -52,9 +54,11 @@
       </div>
     </div>
   </section>
+ <Footer/> 
 </template>
 
 <script setup>
+import Footer from "./Footer.vue";
 import { ref, computed } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
 import { supabase } from "../supabase";
@@ -110,20 +114,10 @@ h5 {
   margin-top: -20PX;
 }
 
-#form3Example4 {
-  position: relative;
-
-}
-
-.btn-eye {
-  display: flex;
-  color: #191919;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 12px;
-  top: 64%;
-  transform: translateY(-15%);
+.btn-light {
+  box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+  width: 37px;
+  height: 37px;
 }
 
 .form-control {

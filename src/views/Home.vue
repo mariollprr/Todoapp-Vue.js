@@ -20,15 +20,11 @@
 </template>
 
 <script setup>
-import moment from "moment"
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue"
 import Footer from "../components/Footer.vue";
 import { useTaskStore } from "../stores/task";
-
-const time = moment().format("MMMM Do YYYY"); 
-const date = moment().format("August 25th 2022")
 
 useTaskStore().fetchTasks();
 const addTask = async (newTask) => {

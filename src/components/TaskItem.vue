@@ -5,11 +5,10 @@
         <h3 class="card-title">{{ item.title }}</h3>
         <p class="card-text">{{ item.description }}</p>
         <div class="buttons-options">
-          <button type="button" class="btn btn-success" @click="completedTask"><i
-              class="fa-solid fa-circle-check"></i></button>
+          <button type="button" class="btn btn-success" @click="completedTask"><i class="fa-solid fa-check"></i></button>
           <button type="button" class="btn btn-warning" @click="showEdit"><i
               class="fa-solid fa-pen-to-square"></i></button>
-          <button type="button" class="btn btn-danger" @click="deleteTask"><i class="fa-solid fa-trash"></i></button>
+          <button type="button" class="btn btn-danger" @click="deleteTask"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </div>
     </div>
@@ -74,12 +73,11 @@ const deleteTask = () => {
 button {
   height: 40px;
   width: 40px;
-  padding-right: 20px;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .buttons-options {
-  padding-top: 30px
+  padding-top: 25px
 }
 
 i {
@@ -96,14 +94,14 @@ i {
 }
 
 .card {
+  justify-content: center;
   display: flex;
   width: 500px;
   height: max-content;
   color:#2f2e41;
   background-color: #f4fbff;
   border-radius: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin: 20px 20px;
   border-left: solid cornflowerblue 5px;
   -webkit-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
   -moz-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);

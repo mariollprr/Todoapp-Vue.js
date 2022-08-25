@@ -14,10 +14,12 @@
           <div class="col-4" id="formInputs">
             <input type="text" id="form3Example1" class="form-control" placeholder="Task title" v-model="title" />
             <div>
-              <input type="text" id="form3Example2" class="form-control" placeholder="Task description"
+              <textarea type="text" id="form3Example2" class="form-control" placeholder="Task description"
                 v-model="description" />
             </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
             <button @click="getInfo" class="btn btn-primary btn-block text-white mb-4">Add Task</button>
+            </div>
           </div>
         </div>
       </div>
@@ -117,10 +119,11 @@ p {
 }
 
 #form3Example1 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 #form3Example2 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  height: 100px;
 }
 </style>
