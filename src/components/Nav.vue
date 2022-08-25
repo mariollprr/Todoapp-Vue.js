@@ -18,7 +18,7 @@
           <!-- Welcome message -->
           <p id="welcomemsg" class="me-auto"> <img
               src="../assets/kisspng-hand-waving-wave-emoji-clip-art-hand-wave-5b4ff8bd421f79.6030101615319676772709.png"
-              width="22" height="22" alt="" /> Welcome back, <span>{{ name[0] }}</span>!</p>
+              width="22" height="22" alt="" /> Welcome back, <span>mario</span>!</p>
         </div>
         <!-- Sign out button -->
         <div class="d-flex align-items-right">
@@ -42,9 +42,9 @@ const route = "/";
 // constant to save a variable that will get the user from store with a computed function imported from vue
 const userStore = useUserStore();
 // constant that calls user email from the useUSerStore
-const email = userStore.user.email;
-// constant that saves the user email and cleans out the @client from the user
-const name = email.split("@");
+// const email = userStore.user.email;
+// // constant that saves the user email and cleans out the @client from the user
+// const name = email.split("@");
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
 const signOut = async () => {
