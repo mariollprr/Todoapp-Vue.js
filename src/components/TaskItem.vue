@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center align-items-center">
         <div class="card">
           <div class="card-body">
             <h3 class="card-title">{{ item.title }}</h3>
@@ -18,16 +18,20 @@
         </div>
       </div>
     </div>
-    <div v-if="showEditOptions">
-      <form @submit.prevent="editTask">
-        <div class="text-center">
-          <input type="text" placeholder="Edit title" class="form-control" v-model="taskTitle" />
-        </div>
-        <div>
-          <input type="text" placeholder="Edit description" class="form-control" v-model="taskDescription" />
-        </div>
-        <input type="submit" class="btn btn-primary btn-block text-white mb-4" value="Edit" />
-      </form>
+    <div class="container" v-if="showEditOptions">
+      <div class="row justify-content-center align-items-center">
+        <form class="col-4" @submit.prevent="editTask">
+          <div class="col-4" id="formInputs2">
+            <input type="text" id="formExample15" class="form-control" placeholder="Edit title" v-model="taskTitle" />
+            <div class="col-4">
+              <textarea type="text" id="formExample16" class="form-control" placeholder="Edit description" v-model="taskDescription" />
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" id="btnEdit" class="btn btn-warning btn-block text-white mb-4" value="Edit">Edit task</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -110,5 +114,28 @@ i {
   -webkit-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
   -moz-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
   box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+}
+
+#btnEdit  {
+  width: 200px;
+}
+
+#formInputs2 {
+  width:auto;
+  max-width: max-content;
+}
+
+textarea {
+  height: 100px;
+}
+
+.container {
+  margin-top: 0;
+}
+
+.col-4 {
+  width: auto;
+  align-items: center;
+  padding: 0;
 }
 </style>

@@ -1,11 +1,9 @@
 <template>
-
-      <div class="text-center">
-        <h1>Add a new Task</h1>
-        <h4>Get that mental clarity you've been longing for.</h4>
-        <p>Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
-      </div>
-
+  <div class="text-center">
+    <h1>Add a new Task</h1>
+    <h4>Get that mental clarity you've been longing for.</h4>
+    <p>Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
+  </div>
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-4">
@@ -121,7 +119,7 @@ p {
 }
 
 #formInputs {
-  width: 850px;
+  width: 750px;
 }
 
 #form3Example1 {

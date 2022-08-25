@@ -20,7 +20,7 @@
               <label class="form-label" for="form3Example4">Password</label>
               <div class="input-group mb-3">
                 <input required v-model="password" class="form-control" :type="passwordFieldType"
-                  placeholder="**********" id="exampleInputPassword1" />
+                  placeholder="**********" id="exampleInputPassword4" />
                 <div class="btn btn-light">
                   <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
@@ -140,6 +140,5 @@ h5 {
 display:none;
 }
 }
-
 
 </style>

@@ -9,18 +9,18 @@
           <div class="card-body p-5 shadow-5 text-center">
             <div class="logo text-center">
               <img src="../assets/sign-logo.png" alt="logo ohmytasks!" class="logoimg" width="200" height="200" />
-              <h5 class=" mb-5">SIGN UP FOR YOUR ACCOUNT</h5>
+              <h5 class=" mb-5">Sign up for your account</h5>
             </div>
             <form @submit.prevent="signUp">
-              <label class="form-label" for="form3Example3">Email</label>
+              <label class="form-label" for="form3Example8">Email</label>
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" placeholder="example@email.com"
+                <input type="email" id="form3Example8" class="form-control" placeholder="example@email.com"
                   v-model="email" required />
               </div>
-              <label class="form-label" for="form3Example4">Password</label>
+              <label class="form-label" for="form3Example5">Password</label>
               <div class="input-group mb-3">
                 <input required v-model="password" class="form-control" :type="passwordFieldType"
-                  placeholder="**********" id="exampleInputPassword1" />
+                  placeholder="**********" id="exampleInputPassword5" />
                 <div class="btn btn-light">
                   <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
@@ -28,10 +28,10 @@
                 <div>
                 </div>
               </div>
-              <label class="form-label" for="exampleInputPassword1">Confirm password</label>
+              <label class="form-label" for="exampleInputPassword2">Confirm password</label>
               <div class="input-group mb-3">
                 <input required v-model="confirmPassword" class="form-control" :type="passwordFieldType"
-                  placeholder="**********" id="exampleInputPassword1" />
+                  placeholder="**********" id="exampleInputPassword2" />
                 <div class="btn btn-light">
                   <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
@@ -110,5 +110,8 @@ const signUp = async () => {
 };
 </script>
 
-<style>
+<style scoped>
+h5 {
+  text-transform: uppercase;
+}
 </style>

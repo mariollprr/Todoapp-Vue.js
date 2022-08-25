@@ -1,41 +1,15 @@
 <template>
-  <!-- <nav class="navbar navbar-expand-lg navbar">
-    <div class="container">
-      <router-link to="/">
-        <img src="../assets/nav-logo.png" height="65" alt="OHMT logo" loading="lazy" style="margin-top: -1px;;" />
-      </router-link>
-      <div class="collapse navbar-collapse" id="navbarButtonsExample">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
-          </li>
-        </ul>
-        <div>
-          <p id="welcomemsg" class="me-auto"> <img
-              src="../assets/kisspng-hand-waving-wave-emoji-clip-art-hand-wave-5b4ff8bd421f79.6030101615319676772709.png"
-              width="22" height="22" alt="" /> Welcome back, <span>{{ name[0] }}</span>!</p>
-        </div>
-        
-      </div>
-    </div>
-  </nav> -->
   <nav class="navbar navbar-expand-lg ">
     <div class="container-fluid">
       <router-link to="/">
         <img src="../assets/nav-logo.png" height="65" alt="OHMT logo" loading="lazy" style="margin-top: -1px;;" />
       </router-link>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText"> <p id="welcomemsg" class="me-auto"> <img
-            src="../assets/kisspng-hand-waving-wave-emoji-clip-art-hand-wave-5b4ff8bd421f79.6030101615319676772709.png"
-            width="22" height="22" alt="" /> Welcome back, <span>{{ name[0] }}</span>!</p>
-            <div class="d-flex align-items-right">
-          <button @click="signOut" type="button" class="btn btn-primary me-3">
-            Sign Out
-          </button>
-        </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <p id="welcomemsg" class="me-auto"> <img src="../assets/hand-waving.png" width="22" height="22" alt="" />
+          Welcome back, <span>{{ name[0] }}</span>!</p>
+        <button @click="signOut" type="button" class="btn btn-primary" id="signOut">
+          Sign Out
+        </button>
       </div>
     </div>
   </nav>
@@ -43,7 +17,6 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-import { supabase } from "../supabase";
 import { useUserStore } from "../stores/user";
 //constant to save a variable that will hold the use router method
 const route = "/";
@@ -72,22 +45,39 @@ const signOut = async () => {
 };
 </script>
 
-<style>
+<style scoped>
 #welcomemsg {
   margin-top: 20px;
   color: white;
   padding-right: 30px
 }
 
-img {
-  margin-top: -1px;
-}
-
 span {
   font-weight: bold;
 }
 
+.btn {
+  margin-top: 13px;
+  height: min-content;
+}
+.btn:hover {
+  background-color: rgb(202, 3, 3);
+  transition: 0.5s;
+}
+.btn:focus {
+  border: rgb(202, 3, 3)
+}
+
 .navbar-expand-lg {
   background-color: #2f2e41;
+  padding: 5px;
 }
+
+@media (max-width: 800px) {
+p {
+display:none;
+}
+}
+
+
 </style>
