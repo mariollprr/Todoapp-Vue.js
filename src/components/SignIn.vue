@@ -111,6 +111,7 @@ h5 {
   box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
   width: 37px;
   height: 37px;
+  background-color: ffffff;
 }
 
 .form-control {

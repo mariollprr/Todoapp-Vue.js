@@ -39,6 +39,7 @@
                 <div>
                 </div>
               </div>
+              <p v-if="errorMsg" class="alert alert-danger" role="alert">{{ errorMsg }}</p>
               <button type="submit" class="btn btn-primary btn-block mb-4">
                 Sign Up
               </button>
@@ -97,7 +98,7 @@ const signUp = async () => {
     }
     catch (error) {
       // displays error message
-      errorMsg.value = error.message;
+      errorMsg.value = "The email or password you entered is incorrect, please try again.";
       // hides error message
       setTimeout(() => {
         errorMsg.value = null;
