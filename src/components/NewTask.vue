@@ -6,7 +6,6 @@
         <h4>-Get that mental clarity you've been longing for.</h4>
         <p>Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
       </div>
-
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-4">
@@ -15,26 +14,24 @@
           <div class="col-4" id="formInputs">
             <input type="text" id="form3Example1" class="form-control" placeholder="Task title" v-model="title" />
             <div>
-              <input type="text" id="form3Example2" class="form-control" placeholder="Task description" v-model="description" />
+              <input type="text" id="form3Example2" class="form-control" placeholder="Task description"
+                v-model="description" />
             </div>
             <button @click="getInfo" class="btn btn-primary btn-block text-white mb-4">Add Task</button>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="alert alert-danger" role="alert" v-if="showErrorMessage">
-      <p>{{ errorMessage }}</p>
+      <div class="alert alert-danger" role="alert" v-if="showErrorMessage">
+        <p>{{ errorMessage }}</p>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task"
 // constant to save a variable that define the custom event that will be emitted to the homeView
-
 const getTask = useTaskStore();
 // constant to save a variable that holds the value of the title input field of the new task
 const title = ref('');
@@ -94,9 +91,13 @@ img {
 h1 {
   font-size: 60px;
 }
-h1, h4, p {
+
+h1,
+h4,
+p {
   text-shadow: rgb(200, 200, 200) 0.1em 0.1em 0.1em
-  }
+}
+
 .container {
   margin-top: 0;
 }
@@ -110,6 +111,7 @@ h1, h4, p {
   margin-top: 20px;
   font-size: large;
 }
+
 #formInputs {
   width: 600px;
 }

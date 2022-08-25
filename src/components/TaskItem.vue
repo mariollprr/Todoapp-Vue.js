@@ -99,6 +99,7 @@ i {
   display: flex;
   width: 500px;
   height: max-content;
+  color:#2f2e41;
   background-color: #f4fbff;
   border-radius: 20px;
   margin-left: 20px;
@@ -108,6 +109,7 @@ i {
   -moz-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
   box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
 }
+
 
 </style>
 

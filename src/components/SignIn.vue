@@ -9,7 +9,7 @@
           <!-- Logo -->
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
-              <img src="../assets/signInUp.png" alt="logo ohmytasks!" width="200" height="200" />
+              <img src="../assets/signInUp.png" alt="Logo OhMyTasks!" width="200" height="200" />
               <h5 class=" mb-5"><i>For people who forget to use to-do apps</i></h5>
             </div>
             <!-- Fornm -->
@@ -20,16 +20,21 @@
                   v-model="email" required />
                 <label class="form-label" for="form3Example3">Email</label>
               </div>
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control shadow-5" placeholder="*********"
-                  v-model="password" />
+              <div>
+                <input required v-model="password" class="form-control" :type="passwordFieldType"
+                  placeholder="Enter your password" id="exampleInputPassword1" />
                 <label class="form-label" for="form3Example4">Password</label>
+                <div class="btn btn-light">
+                  <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+                  <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+                </div>
               </div>
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign In
-              </button>
+              <div class="sign-in-button">
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                  Sign In
+                </button>
+              </div>
               <!-- Register buttons -->
               <div class="text-center">
                 <div>
@@ -43,8 +48,7 @@
         </div>
       </div>
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="../assets/work_from_anywhere.svg" class="w-100 rounded-4 shadow-4"
-          alt="Welcome image" height="746" />
+        <img src="../assets/work_from_anywhere.svg" class="w-100 rounded-4 shadow-4" alt="Welcome image" height="746" />
       </div>
     </div>
   </section>
@@ -105,6 +109,27 @@ h5 {
   color: #2f2e41;
   margin-top: -20PX;
 }
+
+#form3Example4 {
+  position: relative;
+
+}
+
+.btn-eye {
+  display: flex;
+  color: #191919;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 64%;
+  transform: translateY(-15%);
+}
+
+.form-control {
+  box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+}
+
 
 .cascading-right {
   margin-right: -50px;

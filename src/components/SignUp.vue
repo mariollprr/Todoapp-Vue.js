@@ -15,19 +15,19 @@
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control" placeholder="example@email.com"
-                  v-model="email" />
+                  v-model="email" required/>
                 <label class="form-label" for="form3Example3">Email</label>
               </div>
               <!-- Password input -->
               <div class="form-outline mb-4">
                 <input type="password" id="form3Example4" class="form-control" placeholder="*********"
-                  v-model="password" />
+                  v-model="password" required/>
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
               <!-- Confirm password input -->
               <div class="form-outline mb-4">
                 <input type="password" id="form3Example5" class="form-control" placeholder="*********"
-                  v-model="confirmPassword" />
+                  v-model="confirmPassword" required />
                 <label class="form-label" for="form3Example4">Confirm password</label>
               </div>
               <!-- Submit button -->
