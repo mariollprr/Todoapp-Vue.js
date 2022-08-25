@@ -9,7 +9,7 @@
           <!-- Logo -->
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
-              <img src="../assets/signInUp.png" alt="logo ohmytasks!" width="200" height="150" />
+              <img src="../assets/signInUp.png" alt="logo ohmytasks!" width="200" height="200" />
               <h6 class=" mb-5"><i>For people who forget to use to-do apps</i></h6>
             </div>
             <!-- Fornm -->
