@@ -19,11 +19,11 @@
 
 <style scoped>
 .organizer-img {
+  margin-top: 45px;
   text-align: right;
   margin-right: 25px;
 }
 footer {
-  margin-top: 45px;
   margin-bottom: 0;
   align-items: flex-end;
   width: 100%;
