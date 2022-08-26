@@ -8,19 +8,36 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <div class="logo text-center">
-              <img src="../assets/sign-logo.png" alt="logo ohmytasks!" class="logoimg" width="200" height="200" />
-              <h5 class=" mb-5">Sign up for your account</h5>
+              <img 
+              src="../assets/sign-logo.png" 
+              alt="logo ohmytasks!" 
+              class="logoimg" 
+              width="200" 
+              height="200" 
+              />
+              <h5 class=" mb-5">Sign up and get started today</h5>
             </div>
             <form @submit.prevent="signUp">
               <label class="form-label" for="form3Example8">Email</label>
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example8" class="form-control" placeholder="example@email.com"
-                  v-model="email" required />
+                <input 
+                type="email" 
+                id="form3Example8" 
+                class="form-control" 
+                placeholder="example@email.com"
+                v-model="email" required 
+                />
               </div>
               <label class="form-label" for="form3Example5">Password</label>
               <div class="input-group mb-3">
-                <input required v-model="password" class="form-control" :type="passwordFieldType"
-                  placeholder="**********" id="exampleInputPassword5" />
+                <input 
+                 v-model="password" 
+                 class="form-control" 
+                 :type="passwordFieldType"
+                  placeholder="**********" 
+                  id="exampleInputPassword5" 
+                  required
+                  />
                 <div class="btn btn-light">
                   <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
@@ -30,8 +47,14 @@
               </div>
               <label class="form-label" for="exampleInputPassword2">Confirm password</label>
               <div class="input-group mb-3">
-                <input required v-model="confirmPassword" class="form-control" :type="passwordFieldType"
-                  placeholder="**********" id="exampleInputPassword2" />
+                <input  
+                v-model="confirmPassword" 
+                class="form-control" 
+                :type="passwordFieldType"
+                 placeholder="**********" 
+                 id="exampleInputPassword2" 
+                 required 
+                 />
                 <div class="btn btn-light">
                   <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
@@ -55,7 +78,7 @@
         </div>
       </div>
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="../assets/undraw_trip.svg" class="w-100 rounded-4 shadow-4" alt="Welcome image" height="746" />
+        <img src="../assets/undraw_trip.svg" class="w-100 rounded-4 shadow-4" alt="Welcome image" height="745" />
       </div>
     </div>
   </section>
@@ -78,28 +101,19 @@ const password = ref("");
 const confirmPassword = ref("");
 // Error Message
 const errorMsg = ref("");
-// Show hide password variable
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
 const hidePassword = ref(true);
-// Show hide confrimPassword variable
-const hideconfirmPassword = ref(true);
-// Router to push user once SignedUp to Log In
 const redirect = useRouter();
-// Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const signUp = async () => {
   if (password.value === confirmPassword.value) {
     try {
-      // calls the user store and send the users info to backend to logIn
       await useUserStore().signUp(email.value, password.value);
-      // redirects user to the homeView
       redirect.push({ path: "/auth/login" });
     }
     catch (error) {
-      // displays error message
       errorMsg.value = "The email or password you entered is incorrect, please try again.";
-      // hides error message
       setTimeout(() => {
         errorMsg.value = null;
       }, 5000);
@@ -110,8 +124,5 @@ const signUp = async () => {
 };
 </script>
 
-<style scoped>
-h5 {
-  text-transform: uppercase;
-}
+<style>
 </style>

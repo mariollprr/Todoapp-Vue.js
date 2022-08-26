@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="card">
@@ -7,30 +6,57 @@
             <h3 class="card-title">{{ item.title }}</h3>
             <p class="card-text">{{ item.description }}</p>
             <div class="buttons-options">
-              <button type="button" class="btn btn-success" @click="completedTask">
-                <i class="fa-solid fa-check"></i></button>
-              <button type="button" class="btn btn-warning" @click="showEdit"><i
-                  class="fa-solid fa-pen-to-square"></i></button>
-              <button type="button" class="btn btn-danger" @click="deleteTask"><i
-                  class="fa-solid fa-trash-can"></i></button>
+              <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as complete"
+ @click="completedTask">
+                <span v-if="!isCompleted" style=".card-title, .card-text {text-decoration: line-through;}" class="material-symbols-outlined">
+                  radio_button_unchecked
+                </span>
+                <span v-else class="material-symbols-outlined">
+                  check_circle
+                </span>
+              </button>
+              <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" @click="showEdit">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" @click="deleteTask">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
     <div class="container" v-if="showEditOptions">
       <div class="row justify-content-center align-items-center">
-        <form class="col-4" @submit.prevent="editTask">
-          <div class="col-4" id="formInputs2">
-            <input type="text" id="formExample15" class="form-control" placeholder="Edit title" v-model="taskTitle" />
-            <div class="col-4">
-              <textarea type="text" id="formExample16" class="form-control" placeholder="Edit description" v-model="taskDescription" />
+        <div >
+        </div>
+        <div id="formInputs2">
+          <form @submit.prevent="editTask">
+            <input 
+            type="text" 
+            id="form3Example20" 
+            class="form-control" 
+            placeholder="Edit title" 
+            v-model="taskTitle" 
+            />
+            <div>
+              <textarea 
+              type="text" 
+              id="form3Example21" 
+              class="form-control" 
+              placeholder="Edit description"
+              v-model="taskDescription"
+               />
             </div>
             <div class="d-grid gap-2">
-              <button type="submit" id="btnEdit" class="btn btn-warning btn-block text-white mb-4" value="Edit">Edit task</button>
+              <button 
+              type="submit" 
+              id="btnEdit" 
+              class="btn btn-warning btn-block text-white mb-4">
+              Edit Task
+              </button>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -81,24 +107,20 @@ const deleteTask = () => {
 button {
   height: 40px;
   width: 40px;
-  margin-right: 30px;
+  margin-right: 40px;
 }
 
 .buttons-options {
-  padding-top: 25px
+  padding-top: 25px;
 }
 
 i {
   color: white;
 }
 
-.form-control {
-  width: 500px;
-  margin-bottom: 10px;
-}
-
-.v-if {
-  text-decoration: line-through;
+.btn-success {
+  padding: 0px;
+  padding-top:7px;
 }
 
 .card {
@@ -116,26 +138,35 @@ i {
   box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
 }
 
-#btnEdit  {
-  width: 200px;
+.form-control {
+  display:grid;
+  align-items: center;
+  flex-direction: row;
+  margin:10px auto;
+  color: #2f2e41;
+  background-color: #fff2a8;
+  border-radius: 20px;
+  border-left: solid rgb(246, 221, 0) 5px;
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+  box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
+}
+
+
+#btnEdit {
+  width: 220px;
+  margin: 0;
 }
 
 #formInputs2 {
-  width:auto;
-  max-width: max-content;
+  width: 500px;
 }
 
-textarea {
-  height: 100px;
+#form3Example21 {
+  margin-bottom: 10px;;
+  height: 150px;
 }
 
-.container {
-  margin-top: 0;
-}
 
-.col-4 {
-  width: auto;
-  align-items: center;
-  padding: 0;
-}
+
 </style>

@@ -8,19 +8,35 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <div class="text-center">
-              <img src="../assets/sign-logo.png" alt="Logo OhMyTasks!" width="200" height="200" />
-              <h5 class=" mb-5"><i>For people who forget to use to-do apps</i></h5>
+              <img src="../assets/sign-logo.png"
+               alt="Logo OhMyTasks!" 
+               width="200" 
+               height="200" 
+               />
+              <h5 class=" mb-5">For people who forget to use to-do apps</h5>
             </div>
             <form @submit.prevent="signIn">
-            <label class="form-label" for="form3Example3">Email</label>
+              <label class="form-label" for="form3Example3">Email</label>
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control shadow-5" placeholder="example@email.com"
-                  v-model="email" required />
+                <input 
+                type="email" 
+                id="form3Example3"
+                class="form-control shadow-5" 
+                placeholder="example@email.com"
+                v-model="email" 
+                required 
+                />
               </div>
               <label class="form-label" for="form3Example4">Password</label>
               <div class="input-group mb-3">
-                <input required v-model="password" class="form-control" :type="passwordFieldType"
-                  placeholder="**********" id="exampleInputPassword4" />
+                <input 
+                 v-model="password" 
+                 class="form-control" 
+                :type="passwordFieldType"
+                 placeholder="**********" 
+                 id="exampleInputPassword4" 
+                 required
+                 />
                 <div class="btn btn-light">
                   <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
                   <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
@@ -44,7 +60,11 @@
         </div>
       </div>
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="../assets/work_from_anywhere.svg" class="w-100 rounded-4 shadow-4" alt="Welcome image" height="746" />
+        <img 
+        src="../assets/work_from_anywhere.svg" 
+        class="w-100 rounded-4 shadow-4" 
+        alt="Welcome image" 
+        height="745" />
       </div>
     </div>
   </section>
@@ -66,27 +86,21 @@ const buttonTextup = "Sign Up";
 const email = ref("");
 const password = ref("");
 
-// Error Message
 const errorMsg = ref("");
 //Show hide password variables
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
 const hidePassword = ref(true);
-// Router to push user once SignedIn to the HomeView
+
 const redirect = useRouter();
 
-// Arrow function to Signin user to supaBase
 const signIn = async () => {
   try {
-    // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
-    // redirects user to the homeView
     redirect.push({ path: "/" });
   } catch (error) {
-    // displays error message
     errorMsg.value = "The email or password you entered is incorrect, please try again.";
-    // hides error message
     setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
@@ -98,6 +112,7 @@ const signIn = async () => {
 body {
   background: center center cover no-repeat fixed;
 }
+
 a {
   text-decoration: none;
   font-weight: 600;
@@ -117,11 +132,13 @@ h5 {
 
 .form-control {
   box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
-  margin-bottom: 20px;;
+  margin-bottom: 20px;
+  ;
 }
 
 .form-label {
-  margin-bottom: 0;;
+  margin-bottom: 0;
+  ;
 }
 
 
@@ -135,10 +152,10 @@ h5 {
     margin-right: 0;
   }
 }
-@media (max-width: 992px) {
-.w-100 {
-display:none;
-}
-}
 
+@media (max-width: 992px) {
+  .w-100 {
+    display: none;
+  }
+}
 </style>
