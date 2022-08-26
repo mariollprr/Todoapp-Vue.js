@@ -7,7 +7,7 @@
             <p class="card-text">{{ item.description }}</p>
             <div class="buttons-options">
               <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as complete"
- @click="completedTask">
+                @click="completedTask">
                 <span v-if="!isCompleted" style=".card-title, .card-text {text-decoration: line-through;}" class="material-symbols-outlined">
                   radio_button_unchecked
                 </span>
@@ -167,6 +167,9 @@ i {
   height: 150px;
 }
 
+.organizer-img{
+  justify-content: flex-end;
+}
 
 
 </style>

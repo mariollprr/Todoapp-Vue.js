@@ -1,4 +1,7 @@
 <template>
+<div class="organizer-img">
+  <img src="../assets/organizer.svg" alt="Organize illustration">
+</div>
   <footer>
     <div class="text-center text-white">
       <div class="text-center p-3">
@@ -15,8 +18,12 @@
 <script></script>
 
 <style scoped>
+.organizer-img {
+  text-align: right;
+  margin-right: 25px;
+}
 footer {
-  margin-top: 155px;
+  margin-top: 45px;
   margin-bottom: 0;
   align-items: flex-end;
   width: 100%;
