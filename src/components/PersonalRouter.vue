@@ -9,5 +9,4 @@ defineProps({
 });
 </script>
 
-<style>
-</style>
+<style></style>

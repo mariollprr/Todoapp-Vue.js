@@ -1,71 +1,40 @@
 <template>
-  <section class="min-height">
-    <div class="row g-0 align-items-center">
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="card cascading-right" style="
-            background: hsla(0, 0%, 100%, 0.55);
-            backdrop-filter: blur(30px);
-            ">
-          <div class="card-body p-5 shadow-5 text-center">
-            <div class="text-center">
-              <img src="../assets/sign-logo.png"
-               alt="Logo OhMyTasks!" 
-               width="200" 
-               height="200" 
-               />
-              <h5 class=" mb-5">For people who forget to use to-do apps</h5>
-            </div>
-            <form @submit.prevent="signIn">
-              <label class="form-label" for="form3Example3">Email</label>
-              <div class="form-outline mb-4">
-                <input 
-                type="email" 
-                id="form3Example3"
-                class="form-control shadow-5" 
-                placeholder="example@email.com"
-                v-model="email" 
-                required 
-                />
-              </div>
-              <label class="form-label" for="form3Example4">Password</label>
-              <div class="input-group mb-3">
-                <input 
-                 v-model="password" 
-                 class="form-control" 
-                :type="passwordFieldType"
-                 placeholder="**********" 
-                 id="exampleInputPassword4" 
-                 required
-                 />
-                <div class="btn btn-light">
-                  <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
-                  <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
-                </div>
-                <div>
-                </div>
-              </div>
-              <div class="sign-in-button">
-                <p v-if="errorMsg" class="alert alert-danger" role="alert">{{ errorMsg }}</p>
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
-              </div>
-              <div class="text-center">
-                <div>
-                  <p>Don't have an account?
-                    <PersonalRouter :route="routeup" :buttonText="buttonTextup" />
-                  </p>
-                </div>
-              </div>
-            </form>
+  <section class="">
+    <div class="">
+      <div class="">
+        <img src="../assets/logo-vertical.svg" alt="Logo OhMyTasks!" width="200" height="200" />
+        <h5 class="">For people who forget to use to-do apps</h5>
+      </div>
+      <form @submit.prevent="signIn">
+        <label class="" for="form3Example3">Email</label>
+        <div class="">
+          <input type="email" id="form3Example3" class="" v-model="email" required />
+        </div>
+        <label class="" for="form3Example4">Password</label>
+        <div class="">
+          <input v-model="password" class="" :type="passwordFieldType" id="exampleInputPassword4" required />
+          <div class="">
+            <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+            <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+          </div>
+          <div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <img 
-        src="../assets/work_from_anywhere.svg" 
-        class="w-100 rounded-4 shadow-4" 
-        alt="Welcome image" 
-        height="745" />
-      </div>
+        <div class="">
+          <p v-if="errorMsg" class="" role="alert">{{ errorMsg }}</p>
+          <button type="submit" class="">Sign In</button>
+        </div>
+        <div class="">
+          <div>
+            <p>Don't have an account?
+              <PersonalRouter :route="routeUp" :buttonText="buttonTextUp" />
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="">
+      <img src="" class="" alt="" />
     </div>
   </section>
 </template>
@@ -73,28 +42,28 @@
 <script setup>
 import { ref, computed } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
-import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
-import { storeToRefs } from "pinia";
 
 // Route Variables
-const routeup = "/auth/sign-up";
-const buttonTextup = "Sign Up";
+const routeUp = "/auth/sign-up";
+const buttonTextUp = "Sign Up";
+const redirect = useRouter();
 
 // Input Fields
 const email = ref("");
 const password = ref("");
 
+// Error message
 const errorMsg = ref("");
-//Show hide password variables
+
+// Show hide password 
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
 const hidePassword = ref(true);
 
-const redirect = useRouter();
-
+// Function to Sing In
 const signIn = async () => {
   try {
     await useUserStore().signIn(email.value, password.value);
@@ -108,54 +77,4 @@ const signIn = async () => {
 };
 </script>
 
-<style>
-body {
-  background: center center cover no-repeat fixed;
-}
-
-a {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-h5 {
-  color: #2f2e41;
-  margin-top: -20PX;
-}
-
-.btn-light {
-  box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
-  width: 37px;
-  height: 37px;
-  background-color: ffffff;
-}
-
-.form-control {
-  box-shadow: 6px 6px 5px 0px rgba(212, 212, 212, 1);
-  margin-bottom: 20px;
-  ;
-}
-
-.form-label {
-  margin-bottom: 0;
-  ;
-}
-
-
-.cascading-right {
-  margin-right: -50px;
-}
-
-
-@media (max-width: 700.98px) {
-  .cascading-right {
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 992px) {
-  .w-100 {
-    display: none;
-  }
-}
-</style>
+<style></style>

@@ -1,96 +1,58 @@
 <template>
-  <section>
-    <div class="row g-0 align-items-center">
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="card cascading-right" style="
-            background: hsla(0, 0%, 100%, 0.55);
-            backdrop-filter: blur(30px);
-            ">
-          <div class="card-body p-5 shadow-5 text-center">
-            <div class="logo text-center">
-              <img 
-              src="../assets/sign-logo.png" 
-              alt="logo ohmytasks!" 
-              class="logoimg" 
-              width="200" 
-              height="200" 
-              />
-              <h5 class=" mb-5">Sign up and get started today</h5>
-            </div>
-            <form @submit.prevent="signUp">
-              <label class="form-label" for="form3Example8">Email</label>
-              <div class="form-outline mb-4">
-                <input 
-                type="email" 
-                id="form3Example8" 
-                class="form-control" 
-                placeholder="example@email.com"
-                v-model="email" required 
-                />
-              </div>
-              <label class="form-label" for="form3Example5">Password</label>
-              <div class="input-group mb-3">
-                <input 
-                 v-model="password" 
-                 class="form-control" 
-                 :type="passwordFieldType"
-                  placeholder="**********" 
-                  id="exampleInputPassword5" 
-                  required
-                  />
-                <div class="btn btn-light">
-                  <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
-                  <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
-                </div>
-                <div>
-                </div>
-              </div>
-              <label class="form-label" for="exampleInputPassword2">Confirm password</label>
-              <div class="input-group mb-3">
-                <input  
-                v-model="confirmPassword" 
-                class="form-control" 
-                :type="passwordFieldType"
-                 placeholder="**********" 
-                 id="exampleInputPassword2" 
-                 required 
-                 />
-                <div class="btn btn-light">
-                  <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
-                  <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
-                </div>
-                <div>
-                </div>
-              </div>
-              <p v-if="errorMsg" class="alert alert-danger" role="alert">{{ errorMsg }}</p>
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign Up
-              </button>
-              <div class="text-center">
-                <div>
-                  <p>Have an account?
-                    <PersonalRouter :route="route" :buttonText="buttonText" />
-                  </p>
-                </div>
-              </div>
-            </form>
-          </div>
+  <div class="">
+    <div class="">
+      <img src="../assets/logo-vertical.svg" alt="logo ohmytasks!" class="" width="200" height="200" />
+      <h5 class=" ">Sign up and get started today</h5>
+    </div>
+    <form @submit.prevent="signUp">
+      <label class="" for="form3Example8">Email</label>
+      <div class="">
+        <input type="email" id="form3Example8" class="" v-model="email" required />
+      </div>
+      <label class="" for="form3Example5">Password</label>
+      <div class="">
+        <input v-model="password" class="" :type="passwordFieldType" id="exampleInputPassword5" required />
+        <div class="">
+          <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+          <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+        </div>
+        <div>
         </div>
       </div>
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="../assets/undraw_trip.svg" class="w-100 rounded-4 shadow-4" alt="Welcome image" height="745" />
+      <label class="" for="exampleInputPassword2">Confirm password</label>
+      <div class="">
+        <input v-model="confirmPassword" class="" :type="passwordFieldType" id="exampleInputPassword2" required />
+        <div class="">
+          <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+          <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+        </div>
+        <div>
+        </div>
       </div>
+      <p v-if="errorMsg" class="" role="alert">{{ errorMsg }}</p>
+      <button type="submit" class="">
+        Sign Up
+      </button>
+      <div class="">
+        <div>
+          <p>Have an account?
+            <PersonalRouter :route="route" :buttonText="buttonText" />
+          </p>
+        </div>
+      </div>
+    </form>
+    <div class="">
+      <!-- Background -->
+      <img src="" class="" alt="" />
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
 import PersonalRouter from "./PersonalRouter.vue";
 import { ref, computed } from "vue";
-import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
-import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/login";
@@ -124,5 +86,4 @@ const signUp = async () => {
 };
 </script>
 
-<style>
-</style>
+<style></style>
