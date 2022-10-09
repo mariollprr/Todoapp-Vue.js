@@ -1,46 +1,35 @@
 <template>
+  <h3 class="">{{ item.title }}</h3>
+  <p class="">{{ item.description }}</p>
   <div class="">
-    <div class="">
-      <h3 class="">{{ item.title }}</h3>
-      <p class="">{{ item.description }}</p>
-      <div class="">
-        <button type="button" class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as complete"
-          @click="completedTask">
-          <span v-if="!isCompleted" style=".card-title, .card-text {text-decoration: line-through;}" class="">
-          </span>
-          <span v-else class="">
-          </span>
-        </button>
-        <button type="button" class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" @click="showEdit">
-          <i class=""></i>
-        </button>
-        <button type="button" class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
-          @click="deleteTask">
-          <i class=""></i>
-        </button>
-      </div>
-    </div>
+    <button type="button" class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as complete"
+      @click="completedTask">
+      <span v-if="!isCompleted" style=".card-title, .card-text {text-decoration: line-through;}" class="">
+      </span>
+      <span v-else class="">
+      </span>
+    </button>
+    <button type="button" class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" @click="showEdit">
+      <i class=""></i>
+    </button>
+    <button type="button" class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" @click="deleteTask">
+      <i class=""></i>
+    </button>
   </div>
   <div class="" v-if="showEditOptions">
-    <div class="">
+    <form @submit.prevent="editTask">
+      <input type="text" id="form3Example20" class="" placeholder="Edit title" v-model="taskTitle" />
       <div>
+        <textarea type="text" id="form3Example21" class="" placeholder="Edit description" v-model="taskDescription" />
       </div>
-      <div id="formInputs2">
-        <form @submit.prevent="editTask">
-          <input type="text" id="form3Example20" class="" placeholder="Edit title" v-model="taskTitle" />
-          <div>
-            <textarea type="text" id="form3Example21" class="" placeholder="Edit description"
-              v-model="taskDescription" />
-          </div>
-          <div class="">
-            <button type="submit" id="btnEdit" class="">
-              Edit Task
-            </button>
-          </div>
-        </form>
+      <div class="">
+        <button type="submit" id="btnEdit" class="">
+          Edit Task
+        </button>
       </div>
-    </div>
+    </form>
   </div>
+
 </template>
 
 <script setup>
@@ -60,7 +49,6 @@ const props = defineProps(["item"]);
 const showEdit = () => {
   showEditOptions.value = !showEditOptions.value;
 };
-
 
 const editTask = () => {
   const newTask = {
@@ -83,4 +71,6 @@ const deleteTask = () => {
 
 </script>
 
-<style></style>
+<style>
+
+</style>

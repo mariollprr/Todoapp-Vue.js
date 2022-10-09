@@ -1,34 +1,15 @@
 <template>
-  <div class="">
-    <h1>Add a new Task</h1>
-    <h4>Track, visualize and manage tasks in real-time.</h4>
-    <p>Today's date is <strong><i>{{ today.toDateString() }}.</i></strong></p>
-  </div>
-  <div class="">
+  <h1>Add a new Task</h1>
+  <h2>Track, visualize and manage tasks in real-time.</h2>
+  <p>Today's date is{{ today.toDateString() }}</p>
+  <div class="" id="formInputs">
+    <input type="text" id="form3Example1" class="" placeholder="Task title" v-model="title" />
+    <div>
+      <textarea type="text" id="form3Example2" class="" placeholder="Task description" v-model="description" />
+    </div>
     <div class="">
-      <div class="">
-      </div>
-      <div class="" id="formInputs">
-        <input 
-        type="text" 
-        id="form3Example1" 
-        class="" 
-        placeholder="Task title"
-         v-model="title" />
-        <div>
-          <textarea 
-          type="text" 
-          id="form3Example2" 
-          class=""
-          placeholder="Task description"
-          v-model="description"
-          />
-        </div>
-        <div class="">
-          <p v-if="showErrorMessage" class="" role="alert">{{ errorMessage }}</p>
-          <button @click.prevent="errorFunction" class="">Add Task</button> 
-        </div>
-      </div>
+      <p v-if="showErrorMessage" class="" role="alert">{{ errorMessage }}</p>
+      <button @click.prevent="errorFunction" class="">Add Task</button>
     </div>
   </div>
 </template>
@@ -74,8 +55,8 @@ const errorFunction = () => {
     description.value = "";
   }
 };
-
 </script>
 
+<style>
 
-<style></style>
+</style>

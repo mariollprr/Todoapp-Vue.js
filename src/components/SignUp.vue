@@ -1,51 +1,37 @@
 <template>
-  <div class="">
+  <img src="../assets/logo-vertical.svg" alt="logo ohmytasks!" class="" width="200" height="200" />
+  <h5 class=" ">Sign up and get started today</h5>
+  <form @submit.prevent="signUp">
+    <label class="" for="form3Example8">Email</label>
     <div class="">
-      <img src="../assets/logo-vertical.svg" alt="logo ohmytasks!" class="" width="200" height="200" />
-      <h5 class=" ">Sign up and get started today</h5>
+      <input type="email" id="form3Example8" class="" v-model="email" required />
     </div>
-    <form @submit.prevent="signUp">
-      <label class="" for="form3Example8">Email</label>
-      <div class="">
-        <input type="email" id="form3Example8" class="" v-model="email" required />
-      </div>
-      <label class="" for="form3Example5">Password</label>
-      <div class="">
-        <input v-model="password" class="" :type="passwordFieldType" id="exampleInputPassword5" required />
-        <div class="">
-          <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
-          <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
-        </div>
-        <div>
-        </div>
-      </div>
-      <label class="" for="exampleInputPassword2">Confirm password</label>
-      <div class="">
-        <input v-model="confirmPassword" class="" :type="passwordFieldType" id="exampleInputPassword2" required />
-        <div class="">
-          <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
-          <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
-        </div>
-        <div>
-        </div>
-      </div>
-      <p v-if="errorMsg" class="" role="alert">{{ errorMsg }}</p>
-      <button type="submit" class="">
-        Sign Up
-      </button>
-      <div class="">
-        <div>
-          <p>Have an account?
-            <PersonalRouter :route="route" :buttonText="buttonText" />
-          </p>
-        </div>
-      </div>
-    </form>
+    <label class="" for="form3Example5">Password</label>
     <div class="">
-      <!-- Background -->
-      <img src="" class="" alt="" />
+      <input v-model="password" class="" :type="passwordFieldType" id="exampleInputPassword5" required />
+      <div class="">
+        <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+        <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+      </div>
     </div>
-  </div>
+    <label class="" for="exampleInputPassword2">Confirm password</label>
+    <div class="">
+      <input v-model="confirmPassword" class="" :type="passwordFieldType" id="exampleInputPassword2" required />
+      <div class="">
+        <i v-if="!hidePassword" @click="hidePassword = !hidePassword" class="fa-solid fa-eye"></i>
+        <i v-else @click="hidePassword = !hidePassword" class="fa-solid fa-eye-slash"></i>
+      </div>
+    </div>
+    <p v-if="errorMsg" class="" role="alert">{{ errorMsg }}</p>
+    <button type="submit" class="">
+      Sign Up
+    </button>
+    <div>
+      <p>Have an account?
+        <PersonalRouter :route="route" :buttonText="buttonText" />
+      </p>
+    </div>
+  </form>
 </template>
 
 <script setup>
@@ -86,4 +72,6 @@ const signUp = async () => {
 };
 </script>
 
-<style></style>
+<style>
+
+</style>

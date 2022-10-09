@@ -1,22 +1,22 @@
 <template>
-  <header class="main-header">
-    <div class="content-wrapper">
+    <div>
       <router-link to="/">
-        <img src="../assets/logo-horizontal.svg" alt="Logo OMTK!"/>
+        <img src="../assets/logo-horizontal.svg" alt="Logo OMTK!" />
       </router-link>
       <nav id="main-menu" class="main-menu">
         <ul>
-          <li><p id="welcomemsg" class="">
-          Welcome back, <span>{{ name[0] }}</span>!
-        </p></li>
-        <li>      k</li>
+          <li>
+            <p id="welcomemsg" class="">
+              Welcome back, <span>{{ name[0] }}</span>!
+            </p>
+          </li>
           <li><button @click="signOut" type="button">
-          Sign Out
-        </button></li>
+              Sign Out
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
-  </header>
 </template>
 
 <script setup>
@@ -46,4 +46,6 @@ const signOut = async () => {
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
