@@ -1,0 +1,43 @@
+[33m6cc79a4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: revert: Revert "try"
+[33m4f4d99e[m HEAD@{1}: reset: moving to HEAD
+[33m4f4d99e[m HEAD@{2}: reset: moving to HEAD
+[33m4f4d99e[m HEAD@{3}: commit: try
+[33m5bab0f0[m HEAD@{4}: reset: moving to a0157ac01419188d9866991d0b3aee6a045275bb^
+[33ma0157ac[m HEAD@{5}: reset: moving to a0157ac01419188d9866991d0b3aee6a045275bb
+[33m2692bd8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{6}: commit: Prettierr format of markup
+[33ma0157ac[m HEAD@{7}: commit: Styles removed, HTML cleaned, illustratitons and unnecessary files deleted
+[33m5bab0f0[m HEAD@{8}: commit: Launch v.1.0.2
+[33mf66f923[m HEAD@{9}: commit: Launch v.1.0.1
+[33m8bb53ff[m HEAD@{10}: commit: Launch v.1.0
+[33mbeef86f[m HEAD@{11}: commit: responsive finished
+[33mb0ce538[m HEAD@{12}: pull: Merge made by the 'ort' strategy.
+[33m87b0be3[m HEAD@{13}: commit: almost ready
+[33m7cc36b1[m HEAD@{14}: commit: Error message hide fixed
+[33m46e8711[m HEAD@{15}: commit: Fixig hide error messages
+[33m437af42[m HEAD@{16}: commit: correct styles in Home view and position button password
+[33me61078c[m HEAD@{17}: commit: add feature show/hide password in SignIn component
+[33m5c1de47[m HEAD@{18}: pull --ff --progress origin: Merge made by the 'ort' strategy.
+[33m425cb11[m HEAD@{19}: commit: fix grid
+[33m69cc01f[m HEAD@{20}: commit: ajust size logo
+[33m9c45583[m HEAD@{21}: commit: Add name-mail in nav
+[33m75fba61[m HEAD@{22}: commit: run
+[33m9142b82[m HEAD@{23}: commit: desploy
+[33md0bddfb[m HEAD@{24}: commit: test desply
+[33m813d9c8[m HEAD@{25}: commit: desploy vercel
+[33md62154e[m HEAD@{26}: commit: Desploy Vercel
+[33mdce0d4a[m HEAD@{27}: pull --ff --progress origin: Merge made by the 'ort' strategy.
+[33ma56f9b5[m HEAD@{28}: commit: fix some style errors
+[33m079e64c[m HEAD@{29}: pull --ff --progress origin: Merge made by the 'ort' strategy.
+[33mce81812[m HEAD@{30}: commit: Add logic in task store and create task item component
+[33m5b81d1d[m HEAD@{31}: commit: correct styles
+[33m63e50c2[m HEAD@{32}: pull --ff --progress origin: Merge made by the 'ort' strategy.
+[33m6084765[m HEAD@{33}: commit: Add NewTask component
+[33ma4905fb[m HEAD@{34}: commit: Add footer component
+[33m7d7aa51[m HEAD@{35}: commit: Set up sign out function in nav component
+[33m3573e57[m HEAD@{36}: pull --ff --progress origin: Fast-forward
+[33m607e062[m HEAD@{37}: pull: Merge made by the 'ort' strategy.
+[33mdf4b101[m HEAD@{38}: commit: Modified sign up and sign in components
+[33m6302485[m HEAD@{39}: commit: Add interface, connection, and styling to dependent components of AuthView
+[33mb618bec[m HEAD@{40}: commit: Day 2 - Morning commit
+[33m2a1534d[m HEAD@{41}: Branch: renamed refs/heads/main to refs/heads/main
+[33m2a1534d[m HEAD@{43}: commit (initial): upload final-boiler-plate
